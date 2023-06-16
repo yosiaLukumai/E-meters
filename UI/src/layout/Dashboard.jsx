@@ -8,7 +8,7 @@ export const DashBoard = () => {
     return (
         <>
             {screenSize.width > 630 ? <div className="bgDash"><h1>Ops...</h1><h1>App is designed for Mobile phone</h1></div> : <div className="dashStyles"><div className="header "><div className="AppName"><span style={{ fontSize: "2rem", fontWeight: "bold", fontStyle:"italic",}}>
-                <NavLink to={`/auth/${retriveData("userEm")._id}`} style={{textDecoration:"none", color: "rgb(58, 58, 58)"}}>E_meters</NavLink> </span></div><div><img className="responsiveIcon" src={settingIcon} alt="simpleicon"></img></div></div><Outlet /></div>}
+                <NavLink  to={`/auth/${retriveData("userEm")._id}`} style={{textDecoration:"none", color: "rgb(58, 58, 58)"}}>E_meters</NavLink> </span></div><div><img className="responsiveIcon" src={settingIcon} alt="simpleicon"></img></div></div><Outlet /></div>}
         </>
     )
 }

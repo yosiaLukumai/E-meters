@@ -16,7 +16,8 @@ const router  = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
-    errorElement:<NotFound />
+    errorElement:<NotFound />,
+    
   }, {
     path: "/auth/:id",
     element:<Protected isSignedIn={user}><DashBoard/></Protected>,
@@ -42,7 +43,7 @@ const router  = createBrowserRouter([
     ]
     
   }
-])
+], {basename:"/E-meters"})
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />

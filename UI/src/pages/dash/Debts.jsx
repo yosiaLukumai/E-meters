@@ -25,6 +25,7 @@ export const Debt = () => {
         
     }
     const buyUnit = () => {
+        changeAmount("3")
         // console.log("tring ");
         setHit(!hit)
     }
@@ -32,7 +33,7 @@ export const Debt = () => {
     const buyUnits = async () => {
         try {
             setError("")
-            let url = `${MainUrl}/user/balance/${retriveData("userEm")._id}/${amount}"`
+            let url = `${MainUrl}/user/balance/${retriveData("userEm")._id}/3`
             const data = await fetch(url)
          
             const resp = await data.json()
@@ -49,6 +50,7 @@ export const Debt = () => {
             setError(error.message)
         }
     }
+    console.log(parseFloat(user.amount) - parseFloat(user.debt) == 0);
     useEffect(() => {
         if (amount.trim() !== "" && parseFloat(amount) > 0) {
             buyUnits()
@@ -66,11 +68,11 @@ export const Debt = () => {
                             Get loan on units
                         </div>
 
-                        <div className="container">
+                        {/* <div className="container">
                             <div className="col s8 cent">
                                 <input id="amountInput" placeholder="Enter Units" value={amount} type="number" onChange={(e) => changesAmount(e)}></input>
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className="container">
                             {((parseFloat(amount) > 0) && parseFloat(amount) <=2.6) && <div className="col s8 centT">
